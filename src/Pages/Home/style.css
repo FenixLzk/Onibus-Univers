@@ -99,7 +99,7 @@ input:focus{
   --accent:#0066cc;
   --muted:#8a9aa6;
   --radius:12px;
-  /* sombra base mais forte + ligeiro destaque azulado */
+  /* sombra base mais forte + ligeiro destaque esverdeado */
   --shadow: 0 20px 60px rgba(10, 50, 19, 0.12), 0 8px 30px rgba(0, 204, 61, 0.06);
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
@@ -124,13 +124,13 @@ body,html,#root{height:100%;margin:0;font-family:var(--font);background:linear-g
   border-radius:var(--radius);
   /* sombra principal mais pronunciada */
   box-shadow:var(--shadow);
-  border:1px solid rgba(10,20,40,0.03);
+  border:1px solid rgba(10, 40, 18, 0.03);
   /* leve elevação visual ao passar o mouse */
   transition:box-shadow .18s, transform .12s;
 }
 .card:hover{
   transform:translateY(-4px);
-  box-shadow: 0 34px 80px rgba(10,20,50,0.16), 0 12px 40px rgba(0,102,204,0.08);
+  box-shadow: 0 34px 80px rgba(10, 50, 10, 0.16), 0 12px 40px rgba(7, 204, 0, 0.08);
 }
 
 /* pseudo-elemento para criar um "glow" suave por tras do card */
@@ -145,7 +145,7 @@ body,html,#root{height:100%;margin:0;font-family:var(--font);background:linear-g
   border-radius:calc(var(--radius) + 6px);
   pointer-events:none;
   z-index:-1;
-  background: linear-gradient(120deg, rgba(0,102,204,0.06), rgba(0,166,140,0.04));
+  background: linear-gradient(120deg, rgba(34, 204, 0, 0.06), rgba(0,166,140,0.04));
   filter: blur(18px);
   opacity:0.95;
 }
