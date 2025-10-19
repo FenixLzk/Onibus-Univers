@@ -14,7 +14,7 @@ app.use("/uploads", express.static(path.resolve("uploads"))); // servir PDFs
 app.use("/api/cadastro", cadastroRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Servidor funcionando 🚀");
+  res.send("Servidor funcionando");
 });
 
 const PORT = process.env.PORT || 3001;
