@@ -26,19 +26,19 @@ function Home() {
 
     setLoading(true)
     try {
-      const res = await fetch('/api/cadastro', {
+      const res = await fetch('http://localhost:3001/api/cadastro', {
         method: 'POST',
         body: formData
       })
 
-      // ler como texto primeiro (evita "Unexpected end of JSON input")
+      // ler como texto primeiro (isso vai evitar um erro de json input)
       const text = await res.text()
       let data = null
       if (text) {
         try {
           data = JSON.parse(text)
         } catch (err) {
-          // se não for JSON, guardar o texto bruto como mensagem
+          // se nao for json, guardar o texto bruto como mensagem
           data = { message: text }
         }
       }
@@ -46,12 +46,11 @@ function Home() {
       if (!res.ok) throw new Error(data?.message || 'Erro no envio')
 
       setMessage({ type: 'success', text: data?.message || 'Cadastro enviado com sucesso!' })
-      // limpar formulário se desejar
       setCpf('')
       setTelefone('')
       setEmail('')
       setComprovante(null)
-      // limpar input file visual (opcional): document.getElementById('comprovante').value = ''
+
     } catch (err) {
       setMessage({ type: 'error', text: err.message })
     } finally {
